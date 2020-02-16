@@ -1,5 +1,5 @@
 // [数值的整数次方](https://www.nowcoder.com/practice/1a834e5e3e1a4b7ba251417554e07c00)
-
+#pragma once
 #include <cstdint>
 #define let const auto
 

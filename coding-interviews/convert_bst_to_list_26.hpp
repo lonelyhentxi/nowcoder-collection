@@ -1,5 +1,5 @@
 // [二叉搜索树与双向链表](https://www.nowcoder.com/practice/947f6eb80d944a84850b0538bf0ec3a5)
-
+#pragma once
 #include <tuple>
 #define let const auto
 #include "util_tree_node.hpp"

@@ -1,5 +1,5 @@
 // [连续子数组的最大和](https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484)
-
+#pragma once
 #include <limits>
 #define let const auto
 #include <vector>

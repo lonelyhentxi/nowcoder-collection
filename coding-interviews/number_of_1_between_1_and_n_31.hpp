@@ -1,5 +1,5 @@
 // [整数中1出现的次数](https://www.nowcoder.com/practice/bd7f978302044eee894445e244c7eee6)
-
+#pragma once
 #include <vector>
 #include <numeric>
 

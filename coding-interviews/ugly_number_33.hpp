@@ -1,6 +1,7 @@
 // [丑数](https://www.nowcoder.com/practice/6aa9e04fc3794f68acf8778237ba065b)
-
+#pragma once
 #include <vector>
+#include <algorithm>
 
 
 namespace task33 {

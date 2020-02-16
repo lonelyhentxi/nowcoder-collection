@@ -1,5 +1,5 @@
 // [字符串的排列](https://www.nowcoder.com/practice/fe6b651b66ae47d7acce78ffdd9a96c7)
-
+#pragma once
 #include <set>
 #include <string>
 #include <vector>
