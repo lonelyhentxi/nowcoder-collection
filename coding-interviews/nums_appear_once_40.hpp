@@ -5,7 +5,7 @@
 #include <numeric>
 #define let const auto
 
-namespace task29 {
+namespace task40 {
     using namespace std;
     class Solution {
     public:
