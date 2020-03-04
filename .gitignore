@@ -529,3 +529,5 @@ dkms.conf
 
 # for visual studio code cmake ninja tools
 build/
+!src/bin
+target/
