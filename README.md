@@ -8,7 +8,7 @@
 
 My solution collection of nowcoder.
 
-## Coding Intervies (剑指 Offer)
+## Coding Interviews (剑指 Offer)
 
 <!--anker-coding-interviews-start-->
 | # | Task | Language |
