@@ -172,22 +172,28 @@ fn generate_table(tasks: Vec<BoxResult<TaskMeta>>) -> (String,Vec<Box<dyn Error>
     (res.join("\n"), errs)
 }
 
-fn main() -> BoxResult<()> {
-    // start process coding-interviews
-    let src_path = PathBuf::from("./coding-interviews");
+fn generate_zone(zone_name: &str) -> BoxResult<()> {
+    let src_path = PathBuf::from(zone_name);
     let tasks = find_all_tasks(&src_path)?;
-    println!("Number of tasks: {}",tasks.len());
+    println!("Number of {}'s tasks: {}", zone_name, tasks.len());
     let (table, error_task_meta) = generate_table(tasks);
     let mut contents = fs::read_to_string("./README.md")?;
-    contents = Regex::new(r"<!--anker-coding-interviews-start-->[^<>]+<!--anker-coding-interviews-end-->").unwrap()
+    let search_pattern_str = format!("<!--anker-{}-start-->[^<>]+<!--anker-{}-end-->", zone_name, zone_name);
+    contents = Regex::new(&search_pattern_str).unwrap()
         .replace_all(&contents, |_: &Captures| {
-            format!("<!--anker-coding-interviews-start-->\n{}\n<!--anker-coding-interviews-end-->", table)
+            format!("<!--anker-{}-start-->\n{}\n<!--anker-{}-end-->", zone_name, table, zone_name)
         })
         .to_string();
     fs::write("./README.md", &contents.as_bytes())?;
     for e in error_task_meta {
         eprintln!("{:?}", e);
     }
+    Ok(())
+}
+
+fn main() -> BoxResult<()> {
+    generate_zone("coding-interviews")?;
+    generate_zone("js-assessment")?;
     // end process coding-interviews
     Ok(())
 }
